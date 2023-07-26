@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 
+const Practice=(props)=>{
+  return(
+    <div>
+  <h3>{props.title}</h3>
+      {props.children}
+  </div>
+ 
+  )
+}
+const PracticeAuthor=(props)=>{
+  return(
+    <>
+      <h3>{props.title}</h3>
+      <h3>{props.Author}</h3>
+    </>
+  )
+}
+
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Practice title="John Wick"/>
+      <Practice title="Fast X"/>
+      <div className="styling">
+          <Practice title="Extraction">
+          Author Name: <PracticeAuthor Author="Chrish Hemsworth"/>
+          </Practice>
+      </div>
     </div>
   );
 }
